@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Mobile-friendly viewport with safe area support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="application-name" content="Marcin Zczytuje" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Marcin Zczytuje" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/game_over.png" />
+    <title>Boot — Pixi + Vite</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #000; /* Letterbox color */
+        overscroll-behavior: none;
+      }
+      /* Host container occupies full screen including iOS notches */
+      #app {
+        position: fixed;
+        inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        width: auto;
+        height: auto;
+        display: block;
+        touch-action: none; /* Disable scroll/zoom gestures over the game */
+        -webkit-tap-highlight-color: transparent;
+        z-index: 1; /* Above background video */
+      }
+      #bgVideo {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cover entire screen without distortion */
+        z-index: 0;
+        pointer-events: none; /* Let inputs pass through to the game */
+        background: #000; /* Fallback behind video */
+      }
+      canvas { display: block; width: 100%; height: 100%; }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DuatYoAD.js"></script>
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <video id="bgVideo" playsinline preload="auto" loop muted autoplay data-src="/video/background.mp4"></video>
+    <div id="app"></div>
+  </body>
+</html>

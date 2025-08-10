@@ -1,0 +1,1 @@
+function s(t){const o={floors:0,combo:0,lastTouchTimeMs:-1/0};function e(c){c-o.lastTouchTimeMs<=t.comboWindowMs?o.combo+=1:o.combo=1,o.floors+=1,o.lastTouchTimeMs=c}return{state:o,onPlatformTouched:e}}export{s as createScoring};

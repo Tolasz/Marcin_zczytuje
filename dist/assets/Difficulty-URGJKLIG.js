@@ -1,0 +1,1 @@
+const i=5;function r(a){const t=Math.max(1,Math.min(5,Math.floor(a))),n=Math.max(60,120-(t-1)*6),c=60+(t-1)*3,e=120+(t-1)*6,o=55+(t-1)*8;return{levelIndex:t,platformWidth:n,verticalGapMin:c,verticalGapMax:e,cameraSpeed:o}}export{i as CAMPAIGN_LEVELS,r as getDifficulty};

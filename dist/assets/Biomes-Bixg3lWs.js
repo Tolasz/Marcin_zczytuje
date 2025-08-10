@@ -1,0 +1,1 @@
+const d={meadow:{id:"meadow",theme:"day",jitterY:60},cave:{id:"cave",theme:"night",jitterY:40},desert:{id:"desert",theme:"day",jitterY:30},neon:{id:"neon",theme:"high-contrast",jitterY:80}};function i(t){const e=["meadow","cave","desert","neon"],n=e[(Math.max(1,t)-1)%e.length];return d[n]}export{d as BIOMES,i as biomeForLevel};
